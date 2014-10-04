@@ -13,7 +13,6 @@ from constance import config
 @login_required
 @frame_deny_exempt
 def cte_login(request):
-
     salt = config.CTE_SECRET
     token = hashlib.sha1(str(request.user.id) + salt).hexdigest()
     ctx = {
